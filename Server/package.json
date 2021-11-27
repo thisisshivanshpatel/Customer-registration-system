@@ -1,0 +1,27 @@
+{
+  "name": "customer-registration-system",
+  "version": "1.0.0",
+  "description": "This is a customer registration App where customer can register itself and Admin can view all its Data",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "customer",
+    "registration"
+  ],
+  "author": "shivansh patel",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.2",
+    "mongoose": "^6.0.13",
+    "multer": "^1.4.3",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
