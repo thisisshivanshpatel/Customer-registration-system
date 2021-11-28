@@ -3,6 +3,7 @@ const crypto = require("crypto");
 const { validator, registrationSchema } = require("../Helper/SchemaValidator");
 const Customer = require("../Database/customerRegistrationSchema");
 const createError = require("http-errors");
+const moment = require("moment");
 
 const router = express.Router();
 
@@ -29,14 +30,24 @@ router.post(
 
       const uid = crypto.randomBytes(5).toString("hex");
 
-      const customer = new Customer({ name, email, mobile, address, uid });
+      //generating cuurent formaated date using moment
+
+      const createdAt = moment(moment().valueOf()).format("YYYY-MM-DD");
+
+      const customer = new Customer({
+        name,
+        email,
+        mobile,
+        address,
+        uid,
+        createdAt,
+      });
       await customer.save();
 
       res.status(201).json({
         message: "Customer registered successfully",
       });
     } catch (error) {
-      //res.json(error);
       next(error);
     }
   }

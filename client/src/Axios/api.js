@@ -16,3 +16,7 @@ export function customerList() {
 export function getCustomerById(id) {
   return axios.get(`/admin/getCustomerByUid/${id}`);
 }
+
+export function getCustomerRegistrationsByDate(date) {
+  return axios.get(`/admin/getCustomerRegistrationsByDate/${date}`);
+}
